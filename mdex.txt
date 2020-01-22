@@ -1,0 +1,63 @@
+
+void    CEnterpriseControlDlg::AddItemUser(CONNID m_nConnID)
+{
+	CString csLog,strToolTipsText;
+//	CUser user=CMainBusiness::GetInstance()->GetReport().GetUserUpdate();	
+	CUser user=CMainBusiness::GetInstance()->GetReport().ConnID2User(m_nConnID);
+	auto hookInstance = UStatusHook::GetInstance();
+	if (hookInstance->DoHookAddUser(user, this))return;
+	AddUserRow(user);
+	csLog.Format(_T("上线 %s (%s)[%d]"),CString(user.m_strIPNet.c_str()),
+		CString(user.m_strRemark.c_str()),user.m_iCountID);
+
+	AddLog(csLog);
+	
+	if (!((CEnterpriseControlApp *)AfxGetApp())->m_bIsDisablePopTips)
+	{
+
+		strToolTipsText.Format("Host: %s\nIP: %s\nOS: %s\nGroup: %s\nArea: %s", 
+			CString(user.m_strRemark.c_str()), CString(user.m_strIPNet.c_str()),
+			CString(user.m_strSYS.c_str()), CString(user.m_strGroup.c_str()),
+			CString( user.m_strMac.c_str()));
+		m_TrayIcon.ShowBalloonTip( strToolTipsText,NULL, NIIF_NONE, 10);
+	}
+	UpdateConnCount();
+}
+
+void    CEnterpriseControlDlg::DelItemUser()
+{
+	CUser user=CMainBusiness::GetInstance()->GetReport().GetUserUpdate();	
+	auto hookInstance = UStatusHook::GetInstance();
+	hookInstance->DoHookRemUser(user, this);
+	return;
+}
+
+void CEnterpriseControlDlg::OnClose()
+{
+	if (MessageBox(_T("确定退出?"), _T("提示"), MB_YESNO | MB_ICONQUESTION) == IDNO)
+		return;// 
+		// 保存工具栏和菜单的当前状态
+	SaveCommandBars(_T("CommandBars"));
+	UStatusHook::RemoveInstance();
+	CMainBusiness::GetInstance()->SetExit();
+	CMainBusiness::GetInstance()->WaitAllThreadExit();
+	if(lpFilePacket)
+		delete lpFilePacket;
+	if(lpShellPacket)
+		delete lpShellPacket;
+	if(lpScreenPacket)
+		delete lpScreenPacket;
+	if(lpSystemPacket)
+		delete lpSystemPacket;
+	if(lpKeyboardPacket)
+		delete lpKeyboardPacket;
+	if(lpRegeditPacket)
+		delete lpRegeditPacket;
+	if(lpTextChatPacket)
+		delete lpTextChatPacket;
+	if(lpProxyPacket)
+		delete lpProxyPacket;
+	if(lpSysInfoPacket)
+		delete lpSysInfoPacket;
+	CDialogSampleDlgBase::OnClose();
+}

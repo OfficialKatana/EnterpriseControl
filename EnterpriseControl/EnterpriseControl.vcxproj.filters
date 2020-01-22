@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="业务">
+      <UniqueIdentifier>{99ebf0e1-6256-455c-b067-9d60b7371bd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="通信">
+      <UniqueIdentifier>{59381792-1416-4fc1-b7ef-6364408c1f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="glog">
+      <UniqueIdentifier>{269f24c8-9c8e-4d09-af34-f2045199f36d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="comm">
+      <UniqueIdentifier>{9ec66763-c8fd-48b0-8042-02320d946bc5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\EnterpriseControl.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\EnterpriseControl.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\tree_images.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EnterpriseControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnterpriseControlDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainBusiness.h">
+      <Filter>业务</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>业务</Filter>
+    </ClInclude>
+    <ClInclude Include="Group.h">
+      <Filter>业务</Filter>
+    </ClInclude>
+    <ClInclude Include="Report.h">
+      <Filter>业务</Filter>
+    </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>通信</Filter>
+    </ClInclude>
+    <ClInclude Include="..\comm\glog\logging.h">
+      <Filter>glog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\comm\DefineMessage.h">
+      <Filter>comm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\comm\Public.h">
+      <Filter>comm</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol.h">
+      <Filter>通信</Filter>
+    </ClInclude>
+    <ClInclude Include="sortdlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EnterpriseControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnterpriseControlDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainBusiness.cpp">
+      <Filter>业务</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>业务</Filter>
+    </ClCompile>
+    <ClCompile Include="Group.cpp">
+      <Filter>业务</Filter>
+    </ClCompile>
+    <ClCompile Include="Report.cpp">
+      <Filter>业务</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>通信</Filter>
+    </ClCompile>
+    <ClCompile Include="..\comm\Public.cpp">
+      <Filter>comm</Filter>
+    </ClCompile>
+    <ClCompile Include="sortdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EnterpriseControl.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
